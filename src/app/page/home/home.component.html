@@ -1,0 +1,30 @@
+<h1 class="p-6 bg-slate-400 text-white text-center mt-6 mr-3 ml-3">ACTIVIDAD 9</h1>
+<div class="container w-25 mx-auto mt-5 bg-slate-800 text-white w-3/4 mx-auto pt-3 pb-5 shadow-2xl shadow-gray-800 drop-shadow-2xl">
+
+    <h1 class="text-center mb-4 h2">Operaciones</h1>
+    <div class="mb-3 w-2/4 mx-auto">
+        <label>Ingrese Primer Valor</label>
+        <input type="number" id="Valor1" [(ngModel)]="valor1" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 w-1/4 mx-auto outline outline-offset-2 outline-blue-500" placeholder="0" required>
+    </div>
+
+    <div class="mb-8 w-2/4 mx-auto">
+        <label>Ingrese Segundo Valor</label>
+        <input type="number" id="Valor2" [(ngModel)]="valor2" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 w-1/4 mx-auto outline outline-offset-2 outline-blue-500" placeholder="0" required>
+    </div>
+
+    <select [(ngModel)]="num" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 w-1/4  mx-auto mb-5 outline outline-offset-2 outline-blue-500 ml-320px">
+        <option value="Elige una opción" selected>Elige una opción</option>
+        <option value="1">Sumar</option>
+        <option value="2">Restar</option>
+        <option value="3">Multiplicar</option>
+        <option value="4">Dividir</option>
+      </select>
+      <!-- Select -->
+      <div  [ngSwitch]="num" class="mt-2 w-1/4 mx-auto ">
+        <div [ngStyle]="{'color':'orange'}" *ngSwitchCase="1">Resultado es: {{valor1 + valor2}}</div>
+        <div [ngStyle]="{'color':'cyan'}" *ngSwitchCase="2">Resultado es: {{valor1 - valor2}}</div>
+        <div [ngStyle]="{'color':'#00FFC5'}" *ngSwitchCase="3">Resultado es: {{valor1 * valor2}}</div>
+        <div [ngStyle]="{'color':'Fuchsia'}" *ngSwitchCase="4">Resultado es: {{valor1 / valor2}}</div>
+        <div [ngStyle]="{'color':'red'}" *ngSwitchDefault><span [ngStyle]="{'color':'white'}">Resultado: </span>{{error}}</div> 
+      </div>
+</div>
